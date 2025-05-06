@@ -2,18 +2,21 @@
 :root {
     --primary-color: #0073e6;
     --secondary-color: #005bb5;
+    --accent-color: #ff9800; /* Додано акцентний колір */
     --text-color: #333;
     --background-color: #f4f4f4;
     --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    --font-family: 'Roboto', Arial, sans-serif; /* Додано сучасний шрифт */
 }
 
 /* Базові стилі */
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family);
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
+    line-height: 1.6; /* Покращено читабельність */
 }
 
 header {
@@ -89,6 +92,21 @@ section {
     background: white;
     border-radius: 8px;
     box-shadow: var(--box-shadow);
+    opacity: 0; /* Початковий стан для анімації */
+    animation: fadeIn 1s ease-in-out forwards; /* Анімація появи */
+}
+
+/* Анімація плавного появлення */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 table {
@@ -114,6 +132,8 @@ img {
     display: block;
     margin: 10px auto;
     border-radius: 5px;
+    opacity: 0; /* Початковий стан для анімації */
+    animation: fadeIn 1s ease-in-out forwards; /* Анімація появи */
 }
 
 /* Адаптивність */
